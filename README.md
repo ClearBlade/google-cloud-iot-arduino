@@ -1,5 +1,9 @@
 WARNING - THIS IS AN INITIAL FORK OF THE GOOGLE CLOUD IOT ARDUINO REPOSITORY, IT IS UNDER DEVELOPMENT FOR RETARGGETING TO CLEARBLADE IOT CORE.  FOR QUESTIONS PLEASE EMAIL iotcore@clearblade.com
 
+Changes from original google cloud iot library:
+1. keepgoing false
+2. remove maxbackoff delay
+
 # Google Cloud IoT JWT
 
 This is an example of how to generate JSON Web Token (JWT) credentials for
