@@ -71,8 +71,8 @@ void CloudIoTCoreMqtt::mqttConnect(bool skip) {
       this->mqttClient->disconnect();
       skip = false;
       Serial.println("Delaying " + String(this->__backoff__) + "ms");
-      delay(this->__backoff__);
-      keepgoing = true;
+//       delay(this->__backoff__);
+      keepgoing = false;
     } else {
       Serial.println(mqttClient->connected() ? "connected" : "not connected");
       if (!mqttClient->connected()) {
@@ -80,12 +80,13 @@ void CloudIoTCoreMqtt::mqttConnect(bool skip) {
         mqttClient->disconnect();
         logConfiguration(false);
         skip = false;
-        keepgoing = true;
-        Serial.println("Waiting 60 seconds, retry will likely fail");
-        delay(this->__max_backoff__);
+        keepgoing = false;
+//         Serial.println("Waiting 60 seconds, retry will likely fail");
+//         delay(this->__max_backoff__);
       } else {
         // We're now connected
-        Serial.println("\nLibrary connected!");
+//         Serial.println("\nLibrary connected!");
+        log_i("Library connected!");
         keepgoing = false;
         this->__backoff__ = this->__minbackoff__;
       }
