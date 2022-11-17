@@ -28,7 +28,6 @@ class CloudIoTCoreMqtt {
     static const int __max_backoff__ = 60000; // maximum backoff, ms
     static const int __jitter__ = 500; // max random jitter, ms
     boolean logConnect = true;
-    boolean useLts = false;
 
     MQTTClient *mqttClient;
     Client *netClient;
@@ -59,6 +58,5 @@ class CloudIoTCoreMqtt {
 
     void onConnect();
     void setLogConnect(boolean enabled);
-    void setUseLts(boolean enabled);
 };
 #endif // __CLOUDIOTCORE_MQTT_H__
